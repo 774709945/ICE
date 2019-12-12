@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Configuration;
 
-namespace ICE.Framework
+namespace ICE.Framework.DB
 {
     public class BaseSql
     {

@@ -1,10 +1,11 @@
-﻿using System;
+﻿using ICE.Framework.DBMapping;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ICE.Framework
+namespace ICE.Framework.DB
 {
     /// <summary>
     /// Sql语句生成类
@@ -20,7 +21,7 @@ namespace ICE.Framework
                 //查询sql语句
                 string columnsStr = string.Join(",", tp.GetProperties().Select(u => $"[{u.Name}]"));
 
-                _FindSql = $"SELECT {columnsStr} FROM [{tp.Name}] WHERE Id=";
+                _FindSql = $"SELECT {columnsStr} FROM [{tp.GetTableName()}] WHERE Id=";
             }
         }
 

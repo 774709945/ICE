@@ -1,4 +1,4 @@
-﻿using ICE.Framework;
+﻿using ICE.Framework.DB;
 using ICE.Model;
 
 namespace ICE.DAL

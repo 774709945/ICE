@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data.SqlClient;
 
-namespace ICE.Framework
+namespace ICE.Framework.DB
 {
     /// <summary>
     /// SqlServer数据库访问操作类
