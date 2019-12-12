@@ -50,6 +50,16 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ICE.DAL\ICE.DAL.csproj">
+      <Project>{c98f93f9-84cf-41eb-84a5-332a2e73df66}</Project>
+      <Name>ICE.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ICE.Model\ICE.Model.csproj">
+      <Project>{9AA97BFE-EEAB-4E00-BEBE-ABCEFC9947D2}</Project>
+      <Name>ICE.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
