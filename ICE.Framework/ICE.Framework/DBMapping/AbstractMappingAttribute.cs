@@ -5,7 +5,7 @@ namespace ICE.Framework.DBMapping
     /// <summary>
     /// DB特性父类(因为PropertyInfo和Type拥有同一个父类MemberInfo)
     /// </summary>
-    public class AbstractMappingAttribute : Attribute
+    public abstract class AbstractMappingAttribute : Attribute
     {
         private string _Name;
 
