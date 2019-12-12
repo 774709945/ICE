@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data.SqlClient;
 
-namespace ICE.DAL
+namespace ICE.Framework
 {
     /// <summary>
     /// SqlServer数据库访问操作类
@@ -18,9 +18,10 @@ namespace ICE.DAL
         {
             Type tp = typeof(T);
 
-            string sql = $"select * from [{tp.Name}] where Id={id}";
+            //缓存优化，提高获取sql语句效率
+            string sql = SqlBuilder<T>.GetFindSql() + id;
 
-            using (SqlConnection conn = new SqlConnection(base.GetConnectionStr()))
+            using (SqlConnection conn = new SqlConnection(GetConnectionStr()))
             {
                 SqlCommand command = new SqlCommand(sql, conn);
 
@@ -47,5 +48,8 @@ namespace ICE.DAL
                 }
             }
         }
+
+
+
     }
 }

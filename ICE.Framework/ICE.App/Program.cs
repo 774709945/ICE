@@ -12,11 +12,11 @@ namespace ICE.App
     {
         static void Main(string[] args)
         {
-            SqlHelper helper = new SqlHelper();
+            UserDal dal = new UserDal();
 
-            var user2 = helper.FindById<User>(2);
-            var user3 = helper.FindById<User>(3);
-            var user4 = helper.FindById<User>(4);
+            var user2 = dal.FindById(2);
+            var user3 = dal.FindById(3);
+            var user4 = dal.FindById(4);
 
 
             Console.ReadKey();
