@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ICE.Framework.DBMapping;
+using System;
 using System.Data.SqlClient;
 
 namespace ICE.Framework.DB
@@ -37,7 +38,7 @@ namespace ICE.Framework.DB
 
                     foreach (var prop in props)
                     {
-                        prop.SetValue(resObj, reader[prop.Name] is DBNull ? null : reader[prop.Name]);
+                        prop.SetValue(resObj, reader[prop.GetColumnName()] is DBNull ? null : reader[prop.GetColumnName()]);
                     }
 
                     return resObj;

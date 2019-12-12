@@ -19,7 +19,7 @@ namespace ICE.Framework.DB
             Type tp = typeof(T);
             {
                 //查询sql语句
-                string columnsStr = string.Join(",", tp.GetProperties().Select(u => $"[{u.Name}]"));
+                string columnsStr = string.Join(",", tp.GetProperties().Select(u => $"[{u.GetColumnName()}]"));
 
                 _FindSql = $"SELECT {columnsStr} FROM [{tp.GetTableName()}] WHERE Id=";
             }

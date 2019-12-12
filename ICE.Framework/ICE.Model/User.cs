@@ -10,7 +10,8 @@ namespace ICE.Model
 
         public string UserName { get; set; }
 
-        public string UserPwd { get; set; }
+        [DBColumn("UserPwd")]
+        public string UserPassword { get; set; }
 
         public DateTime CreateTime { get; set; }
 

@@ -25,5 +25,19 @@ namespace ICE.Framework.DBMapping
                 return type.Name;
             }
         }
+
+        public static string GetColumnName(this MemberInfo member)
+        {
+            if (member.IsDefined(typeof(DBColumnAttribute),false))
+            {
+                var memberInfo = member.GetCustomAttribute<DBColumnAttribute>();
+
+                return memberInfo.GetColumnName();
+            }
+            else
+            {
+                return member.Name;
+            }
+        }
     }
 }
