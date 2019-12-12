@@ -6,18 +6,11 @@ namespace ICE.Framework.DBMapping
     /// 实体对应数据库表名
     /// </summary>
     [AttributeUsage(AttributeTargets.Class)]
-    public class DBTableAttribute : Attribute
+    public class DBTableAttribute : AbstractMappingAttribute
     {
-        private string _tableName;
-
-        public DBTableAttribute(string tableName)
+        public DBTableAttribute(string tableName):base(tableName)
         {
-            _tableName = tableName;
-        }
 
-        public string GetTableName()
-        {
-            return _tableName;
         }
     }
 }

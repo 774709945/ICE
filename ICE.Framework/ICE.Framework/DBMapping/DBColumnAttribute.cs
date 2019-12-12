@@ -6,18 +6,11 @@ namespace ICE.Framework.DBMapping
     /// 实体属性对应数据库字段名称
     /// </summary>
     [AttributeUsage(AttributeTargets.Property)]
-    public class DBColumnAttribute : Attribute
+    public class DBColumnAttribute : AbstractMappingAttribute
     {
-        private string _columnName;
-
-        public DBColumnAttribute(string columnName)
+        public DBColumnAttribute(string columnName) : base(columnName)
         {
-            _columnName = columnName;
-        }
 
-        public string GetColumnName()
-        {
-            return _columnName;
         }
     }
 }

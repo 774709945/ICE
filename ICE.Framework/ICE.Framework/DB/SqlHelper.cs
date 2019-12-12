@@ -38,7 +38,7 @@ namespace ICE.Framework.DB
 
                     foreach (var prop in props)
                     {
-                        prop.SetValue(resObj, reader[prop.GetColumnName()] is DBNull ? null : reader[prop.GetColumnName()]);
+                        prop.SetValue(resObj, reader[prop.GetMappingName()] is DBNull ? null : reader[prop.GetMappingName()]);
                     }
 
                     return resObj;

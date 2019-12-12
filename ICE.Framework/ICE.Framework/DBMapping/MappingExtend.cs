@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Reflection;
 
 namespace ICE.Framework.DBMapping
 {
@@ -12,32 +7,19 @@ namespace ICE.Framework.DBMapping
     /// </summary>
     public static class MappingExtend
     {
-        public static string GetTableName(this Type type)
+        public static string GetMappingName(this MemberInfo type)
         {
-            if (type.IsDefined(typeof(DBTableAttribute),false))
+            if (type.IsDefined(typeof(AbstractMappingAttribute), false))
             {
-                var attribute = type.GetCustomAttribute<DBTableAttribute>();
+                var attribute = type.GetCustomAttribute<AbstractMappingAttribute>();
 
-                return attribute.GetTableName();
+                return attribute.GetName();
             }
             else
             {
                 return type.Name;
             }
         }
-
-        public static string GetColumnName(this MemberInfo member)
-        {
-            if (member.IsDefined(typeof(DBColumnAttribute),false))
-            {
-                var memberInfo = member.GetCustomAttribute<DBColumnAttribute>();
-
-                return memberInfo.GetColumnName();
-            }
-            else
-            {
-                return member.Name;
-            }
-        }
+        
     }
 }
