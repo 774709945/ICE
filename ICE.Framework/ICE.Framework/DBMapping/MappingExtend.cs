@@ -20,6 +20,6 @@ namespace ICE.Framework.DBMapping
                 return type.Name;
             }
         }
-        
+
     }
 }

@@ -8,7 +8,7 @@ namespace ICE.Framework.DBMapping
     [AttributeUsage(AttributeTargets.Class)]
     public class DBTableAttribute : AbstractMappingAttribute
     {
-        public DBTableAttribute(string tableName):base(tableName)
+        public DBTableAttribute(string tableName) : base(tableName)
         {
 
         }

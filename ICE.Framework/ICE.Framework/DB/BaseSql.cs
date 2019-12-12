@@ -11,7 +11,7 @@ namespace ICE.Framework.DB
         {
             if (string.IsNullOrEmpty(_connStr))
             {
-                throw new Exception("异常:数据库连接字符串为空");
+                throw new Exception("异常: 没有获取到数据库连接字符串");
             }
 
             return _connStr;

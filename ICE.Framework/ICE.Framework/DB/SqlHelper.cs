@@ -38,7 +38,9 @@ namespace ICE.Framework.DB
 
                     foreach (var prop in props)
                     {
-                        prop.SetValue(resObj, reader[prop.GetMappingName()] is DBNull ? null : reader[prop.GetMappingName()]);
+                        string propName = prop.GetMappingName();//查询时as一下，可以省下一轮
+
+                        prop.SetValue(resObj, reader[propName] is DBNull ? null : reader[propName]);
                     }
 
                     return resObj;
@@ -49,8 +51,5 @@ namespace ICE.Framework.DB
                 }
             }
         }
-
-
-
     }
 }
